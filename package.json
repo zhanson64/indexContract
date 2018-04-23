@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "deploy": "node deploy.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "config": "^1.30.0",
     "ganache-cli": "^6.1.0",
     "mocha": "^5.1.1",
     "solc": "^0.4.23",

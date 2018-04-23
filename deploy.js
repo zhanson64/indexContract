@@ -1,10 +1,12 @@
 const HDWalletProvider = require('truffle-hdwallet-provider'); // a provider that will connect to infura and set up unlock account 
 const Web3 = require('web3');
 const { interface, bytecode } = require('./compile');
-
+const config = require('config');
+let mnemonic = config.get('mnemonic');
+let url = config.get('url');
 const provider = new HDWalletProvider(
-'cargo vintage inform dune december allow fever river zone style report obey', //12 word Mnemonic. Can be create with meta mask
-'https://rinkeby.infura.io/6oRjTaSv1lRcxJ8Ncqq4' //This is the url with the token provided by Infura
+    config.mnemonic, //12 word Mnemonic. Can be create with meta mask
+    config.url //This is the url with the token provided by Infura
 );
 
 const web3 = new Web3(provider); //connecting provider into web3 to use to interface with deployed contract
